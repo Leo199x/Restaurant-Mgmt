@@ -18,13 +18,8 @@ from django.urls import path, include
 
 # from restaurant import urls
 urlpatterns = [
+    path('api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
     path('', include('restaurant.urls')),
     path('', include('menu.urls')),
-    path('api-auth/', include('rest_framework.urls')),
-
-
-
-
-
 ]

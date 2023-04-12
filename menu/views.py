@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions
 from .serializers import MenuSerializer
 from .models import Menu
 
@@ -8,5 +8,6 @@ from .models import Menu
 class MenuViewSet(viewsets.ModelViewSet):
     serializer_class = MenuSerializer
     queryset = Menu.objects.all()
+    permission_classes = [permissions.IsAuthenticated]
     
     

@@ -50,13 +50,12 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ]
-    
-}
-REST_FRAMEWORK = {
+    ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     )
+    
 }
 
 
@@ -138,9 +137,9 @@ WSGI_APPLICATION = 'pasta.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres', 
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
+        'NAME': 'pasta', 
+        'USER': 'pastauser',
+        'PASSWORD': 'pastauser',
         'HOST': '127.0.0.1', 
         'PORT': '5432',   
         }

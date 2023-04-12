@@ -11,7 +11,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 class RestaurantList(generics.ListCreateAPIView):
     serializer_class = RestaurantSerializer
     queryset = Restaurant.objects.all()
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly,IsAdmin]
+    permission_classes = [permissions.IsAuthenticated]
 
 
     #def perform_create(self, serializer):
